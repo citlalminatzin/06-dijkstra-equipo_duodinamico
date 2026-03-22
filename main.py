@@ -5,14 +5,8 @@ from numpy import zeros
 from math import inf
 from models import matriz_ejercicio_1
 
-
-def create_adjacency_matrix()->list[list[float]]:
-    """
-    Crea una matriz de adyacencia
-    """
-    ...
 def dijkstra(M, origin):
-    
+
     """
     M: matriz de pesos, origin: nodo inicial
     Regresa una lista de tuplas: (distancia_minima, predecesor 
@@ -92,10 +86,53 @@ if __name__ == "__main__":
     for nodo, (distancia, predecesor) in enumerate(resultado):
         print(f"Nodo {nodo}: distancia = {distancia}, predecesor = {predecesor}")
 
+# Ejercicio 2
+def optimal_path(M, origin, destination):
+    """
+    Regresa el camino óptimo y la distancia mínima
+    entre origin y destination.
+    """
+    resultado = dijkstra(M, origin)
+    distancia = resultado[destination][0]
+
+    if distancia == inf:
+        return [], inf
+
+    camino = []
+    actual = destination
+
+    while actual is not None:
+        camino.append(actual)
+
+        if actual == origin:
+            break
+
+        actual = resultado[actual][1]
+
+    if camino[-1] != origin:
+        return [], inf
+
+    camino.reverse()
+    return camino, distancia
 
 
+def ejercicio_2():
+    """
+    Encuentra el camino óptimo del nodo 0 al nodo 2
+    usando la misma matriz del ejercicio 1.
+    """
+    MD = matriz_ejercicio_1()
+    return optimal_path(MD, 0, 2)
 
+# Ejercicio 2
+    camino, distancia = ejercicio_2()
 
+    print("\nEjercicio 2:")
+    print(f"Camino óptimo: {camino}")
+    print(f"Distancia mínima: {distancia}")
+    
+
+"""
 
 def ejercicio_3a():
     """
@@ -153,6 +190,7 @@ def ejercicio_4():
 
 def main():
     ...
+"""
 
 if __name__ == "__main__":
     main()
