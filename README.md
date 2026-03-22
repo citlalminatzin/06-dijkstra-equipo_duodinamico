@@ -11,6 +11,18 @@
 
 
 ## Uso e instalación
+(Si no eliminas esta línea lloro) Aquí escribe qué necesitas que instale para ejecutar tu código, por ejemplo:
+
+- `matplotlib`
+
+(Si no eliminas esta línea lloro) Y dime cómo debería ejecutar tu código y en qué orden. Recuerda que antes de ejecutar tu código leeré tu `README.md`. Por ejemplo la manera en la que propongo que organizes tu código es
+
+- `main.py`: Contiene el código para graficar cada uno de los tres ejercicios
+- `data.py`: Tal vez aquí puedes leer el csv para a partir crear una matriz de adyacencia
+
+
+
+
 ## Ejercicio 1
 Programa una función que reciba la matriz de pesos de una gráfica y el nodo inicial y que 
 aplique el algoritmo de Dijkstra. Tu función debe regresar una lista con las distancias de las
@@ -31,14 +43,8 @@ Nota : Donde encuentres un cero quiere decir que no existe una arista entre dich
 ## Ejercicio 4
 Encuentra la distancia mínima para el siguiente ejemplo , y organice el diagrama para tenerlo en Python.
 
-(Si no eliminas esta línea lloro) Aquí escribe qué necesitas que instale para ejecutar tu código, por ejemplo:
 
-- `matplotlib`
 
-(Si no eliminas esta línea lloro) Y dime cómo debería ejecutar tu código y en qué orden. Recuerda que antes de ejecutar tu código leeré tu `README.md`. Por ejemplo la manera en la que propongo que organizes tu código es
-
-- `main.py`: Contiene el código para graficar cada uno de los tres ejercicios
-- `data.py`: Tal vez aquí puedes leer el csv para a partir crear una matriz de adyacencia
 
 ## Conclusión
 
