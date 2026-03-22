@@ -86,12 +86,7 @@ def ejercicio_1():
     return dijkstra(MD, 0)
 
 
-if __name__ == "__main__":
-    resultado = ejercicio_1()
 
-    print("Resultado de Dijkstra desde el nodo 0:")
-    for nodo, (distancia, predecesor) in enumerate(resultado):
-        print(f"Nodo {nodo}: distancia = {distancia}, predecesor = {predecesor}")
 
 # Ejercicio 2
 def optimal_path(M, origin, destination):
@@ -131,13 +126,6 @@ def ejercicio_2():
     MD = matriz_ejercicio_1()
     return optimal_path(MD, 0, 2)
 
-# Ejercicio 2
-    camino, distancia = ejercicio_2()
-
-    print("\nEjercicio 2:")
-    print(f"Camino óptimo: {camino}")
-    print(f"Distancia mínima: {distancia}")
-    
 
 def ejercicio_3a():
     M1 = matriz_ejercicio_3a()
@@ -156,6 +144,24 @@ def ejercicio_3c():
     n = len(M3)
     distancias = [dijkstra(M3, i) for i in range(n)]
     return distancias
+
+
+####################
+
+if __name__ == "__main__":
+    resultado = ejercicio_1()
+
+    print("Resultado de Dijkstra desde el nodo 0:")
+    for nodo, (distancia, predecesor) in enumerate(resultado):
+        print(f"Nodo {nodo}: distancia = {distancia}, predecesor = {predecesor}")
+
+# Ejercicio 2
+    camino, distancia = ejercicio_2()
+
+    print("\nEjercicio 2:")
+    print(f"Camino óptimo: {camino}")
+    print(f"Distancia mínima: {distancia}")
+    
 
  # Ejercicio 3a
     print("\nEjercicio 3a:")
@@ -177,16 +183,3 @@ def ejercicio_3c():
 
 
 
-"""
-
-
-def ejercicio_4():
-    ...
-
-def main():
-    ...
-
-
-if __name__ == "__main__":
-    main()
-"""
