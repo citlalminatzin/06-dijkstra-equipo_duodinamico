@@ -6,12 +6,30 @@
 
 ## Integrantes
 
-- (Si no modificas esta línea lloro) Babilonia, Aureliano
-- (Si no modificas esta línea lloro) Buendía, Aureliano
-- (Si no modificas esta línea lloro) Segundo, Aureliano
+- García Chalche Julio César 
+- Rodríguez Rodríguez Diego 
 
 
 ## Uso e instalación
+## Ejercicio 1
+Programa una función que reciba la matriz de pesos de una gráfica y el nodo inicial y que 
+aplique el algoritmo de Dijkstra. Tu función debe regresar una lista con las distancias de las
+rutas y el origen de la arista con la que terminó la ruta.
+
+
+## Ejercicio 2
+Ahora, usando las listas generadas por tu función del algoritmo de Dijkstra, programa 
+una función que encuentre el camino óptimo entre dos vértices.
+
+
+## Ejercicio 3
+Prueba tus funciones con las siguientes matrices de pesos, empezando siempre en el nodo 
+0.
+Nota : Donde encuentres un cero quiere decir que no existe una arista entre dichos vertices.
+
+
+## Ejercicio 4
+Encuentra la distancia mínima para el siguiente ejemplo , y organice el diagrama para tenerlo en Python.
 
 (Si no eliminas esta línea lloro) Aquí escribe qué necesitas que instale para ejecutar tu código, por ejemplo:
 
