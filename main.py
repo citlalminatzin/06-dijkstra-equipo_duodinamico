@@ -4,6 +4,13 @@ import matplotlib.pyplot as plt
 from numpy import zeros
 from math import inf
 from models import matriz_ejercicio_1
+#para el ejercicio 3
+from models import (
+    matriz_ejercicio_1,
+    matriz_ejercicio_3a,
+    matriz_ejercicio_3b,
+    matriz_ejercicio_3c
+)
 
 def dijkstra(M, origin):
 
@@ -132,55 +139,46 @@ def ejercicio_2():
     print(f"Distancia mínima: {distancia}")
     
 
-"""
-
 def ejercicio_3a():
-  
-    n = 8
-    M1 = zeros((n,n))
-
-    M1[0,1] = M1[1,0] = 3
-    M1[1,2] = M1[2,1] = 1
-    M1[0,3] = M1[3,0] = 2
-    M1[3,2] = M1[2,3] = 3
-    M1[1,4] = M1[4,1] = 4
-    M1[2,5] = M1[5,2] = 2
-    M1[2,6] = M1[6,2] = 2
-    M1[3,6] = M1[6,3] = 4
-    M1[4,7] = M1[7,4] = 6
-    M1[5,7] = M1[7,5] = 4
-    M1[5,6] = M1[6,5] = 3
-    M1[6,7] = M1[7,6] = 5
-    
+    M1 = matriz_ejercicio_3a()
+    n = len(M1)
     distancias = [dijkstra(M1, i) for i in range(n)]
     return distancias
 
 def ejercicio_3b():
-    n = 4
-    M2 = zeros((n,n))
-
-    M2[0,1] = 9
-    M2[3,2] = 2
-    M2[0,3] = 6
-    M2[1,3] = 1
-    M2[2,1] = 3
-
+    M2 = matriz_ejercicio_3b()
+    n = len(M2)
     distancias = [dijkstra(M2, i) for i in range(n)]
     return distancias
-    
+
 def ejercicio_3c():
-    n = 4
-    M3 = zeros((n,n))
-
-    M3[0,1] = 4
-    M3[0,2] = 8
-    M3[0,3] = 16
-    M3[1,2] = 5
-    M3[1,3] = 11
-    M3[2,3] = 6
-
+    M3 = matriz_ejercicio_3c()
+    n = len(M3)
     distancias = [dijkstra(M3, i) for i in range(n)]
     return distancias
+
+ # Ejercicio 3a
+    print("\nEjercicio 3a:")
+    resultado_3a = ejercicio_3a()
+    for i, fila in enumerate(resultado_3a):
+        print(f"Desde el nodo {i}: {fila}")
+
+    # Ejercicio 3b
+    print("\nEjercicio 3b:")
+    resultado_3b = ejercicio_3b()
+    for i, fila in enumerate(resultado_3b):
+        print(f"Desde el nodo {i}: {fila}")
+
+    # Ejercicio 3c
+    print("\nEjercicio 3c:")
+    resultado_3c = ejercicio_3c()
+    for i, fila in enumerate(resultado_3c):
+        print(f"Desde el nodo {i}: {fila}")
+
+
+
+"""
+
 
 def ejercicio_4():
     ...
