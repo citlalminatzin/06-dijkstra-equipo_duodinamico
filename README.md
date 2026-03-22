@@ -11,12 +11,8 @@
 
 
 ## Uso e instalación
-(Si no eliminas esta línea lloro) Aquí escribe qué necesitas que instale para ejecutar tu código, por ejemplo:
-
-- `matplotlib`
-
-(Si no eliminas esta línea lloro) Y dime cómo debería ejecutar tu código y en qué orden. Recuerda que antes de ejecutar tu código leeré tu `README.md`. Por ejemplo la manera en la que propongo que organizes tu código es
-
+Para poder ejecutar el código, primero debes instalar los siguientes archivos:
+- `models.py`: Aquí encontrarás el algoritmo de Dijkstra.
 - `main.py`: Contiene el código para graficar cada uno de los tres ejercicios
 - `data.py`: Tal vez aquí puedes leer el csv para a partir crear una matriz de adyacencia
 
@@ -42,7 +38,7 @@ Nota : Donde encuentres un cero quiere decir que no existe una arista entre dich
 
 ## Ejercicio 4
 Encuentra la distancia mínima para el siguiente ejemplo , y organice el diagrama para tenerlo en Python.
-
+(Screenshot_20260322_151336_Drive.jpg)
 
 
 
