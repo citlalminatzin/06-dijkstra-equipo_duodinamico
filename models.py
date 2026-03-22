@@ -10,33 +10,18 @@ funciones principales que vayas a reutilizar en
 tus otras prácticas
 """
 
-def modelo_geom(longitudes: list[float]) -> list[float]:
+import numpy as np
+
+
+def matriz_ejercicio_1():
     """
-    longitudes: list[float] ¿Qué significa longitudes? 
-    (Por favor elimina la pregunta y reemplazala con su respuesta)
-    ...
+    Matriz del Ejercicio 1 de la práctica.
+    Gráfica dirigida de 4 nodos.
     """
-    ... # Puedes eliminar esta línea
-
-def modelo_circ(longitudes: list[float]) -> list[float]:
-    """
-    longitudes: list[float] ¿Qué significa longitudes? 
-    (Por favor elimina la pregunta y reemplazala con su respuesta)
-    ...
-    """
-    ... # Puedes eliminar esta línea
-
-def pearson(x:list[float], y: list[float]):
-    """Calcula el coeficiente de pearson"""
-    ...
-
-def calc_error(pred:list[float], truth: list[float]):
-    """Calcula el error entre una predicción y la verdad del dataset"""
-
-def main():
-    ... # Puedes eliminar esta línea
-
-if __name__ == "__main__":
-    # Si necesitas hacer pruebas de tu función las puedes escribir acá
-    main()
-
+    MD = np.zeros((4, 4))
+    MD[0, 1] = 9
+    MD[3, 2] = 2
+    MD[0, 3] = 6
+    MD[1, 3] = 1
+    MD[2, 1] = 3
+    return MD

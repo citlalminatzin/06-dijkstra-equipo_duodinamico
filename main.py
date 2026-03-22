@@ -3,61 +3,99 @@
 import matplotlib.pyplot as plt
 from numpy import zeros
 from math import inf
+from models import matriz_ejercicio_1
+
 
 def create_adjacency_matrix()->list[list[float]]:
     """
     Crea una matriz de adyacencia
     """
     ...
-
-def dijkstra(M: list[list[float]], origin: int) -> list[list[float]]:
+def dijkstra(M, origin):
+    
     """
-    M : Matriz de pesos de una gráfica
-    origin: índice del nodo inicial
-
-    returns
-    lista con las distancia de las rutas y el origen de la arista
-    con la que terminó la ruta
+    M: matriz de pesos, origin: nodo inicial
+    Regresa una lista de tuplas: (distancia_minima, predecesor 
     """
-    # ---
-    # Paso 1: Inicializa las distancias
-    # ---
 
-    # ---
-    # Paso 2: Marca el nodo permanente
-    # ---
+    n = len(M)
 
-    # ---
-    # Paso 3: Identifica los nodos vecinos disponibles
-    # ---
+    # Paso 1: inicializar distancias y predecesores
+    distancias = [inf] * n
+    predecesores = [None] * n
+    permanentes = [False] * n
 
-    # ---
-    # Paso 4: Reetiquetado
-    # ---
+    distancias[origin] = 0
 
-    # ---
-    # Paso 5: Actualizar el nodo permanente
-    # ---
-    ...
+    # Repetimos hasta revisar todos los nodos
+    for _ in range(n):
+        # Paso 2 y 5: escoger el nodo no permanente
+        # con menor distancia conocida
+        nodo_actual = None
+        mejor_distancia = inf
 
-def minimal_distance(M: list[list[float]], origin:int, destination:int)-> float:
-    """Devuelve la distancia mínima entre el origin y destination"""
-    ...
+        for i in range(n):
+            if not permanentes[i] and distancias[i] < mejor_distancia:
+                mejor_distancia = distancias[i]
+                nodo_actual = i
+
+        # Si ya no hay nodos alcanzables, terminamos
+        if nodo_actual is None:
+            break
+
+        # Marcar como permanente
+        permanentes[nodo_actual] = True
+
+        # Paso 3 y 4: revisar vecinos y reetiquetar
+        for vecino in range(n):
+            peso = M[nodo_actual][vecino]
+
+            # En esta práctica, peso 0 significa que no hay arista
+            if peso != 0 and not permanentes[vecino]:
+                nueva_distancia = distancias[nodo_actual] + peso
+
+                if nueva_distancia < distancias[vecino]:
+                    distancias[vecino] = nueva_distancia
+                    predecesores[vecino] = nodo_actual
+
+    # Regresar lista de (distancia, predecesor)
+    resultado = []
+    for i in range(n):
+        if distancias[i] == inf:
+            resultado.append((inf, None))
+        else:
+            resultado.append((float(distancias[i]), predecesores[i]))
+
+    return resultado
+
+
+def minimal_distance(M, origin, destination):
+    """
+    Devuelve solo la distancia mínima entre origin y destination.
+    """
+    resultado = dijkstra(M, origin)
+    return resultado[destination][0]
+
 
 def ejercicio_1():
     """
-    Regresa las distancias mínimas del
-    primer vértice a todos los demás
+    Regresa las distancias mínimas del primer vértice a todos los demás.
     """
-    n = 4
-    MD = zeros((n, n))
-    MD[0,1] = 9
-    MD[3,2] = 2
-    MD[0,3] = 6
-    MD[1,3] = 1
-    MD[2,1] = 3
-    
+    MD = matriz_ejercicio_1()
     return dijkstra(MD, 0)
+
+
+if __name__ == "__main__":
+    resultado = ejercicio_1()
+
+    print("Resultado de Dijkstra desde el nodo 0:")
+    for nodo, (distancia, predecesor) in enumerate(resultado):
+        print(f"Nodo {nodo}: distancia = {distancia}, predecesor = {predecesor}")
+
+
+
+
+
 
 def ejercicio_3a():
     """
