@@ -135,10 +135,7 @@ def ejercicio_2():
 """
 
 def ejercicio_3a():
-    """
-    Regresa las distancias mínimas de todos
-    los vértices entre sí
-    """
+  
     n = 8
     M1 = zeros((n,n))
 
@@ -190,7 +187,8 @@ def ejercicio_4():
 
 def main():
     ...
-"""
+
 
 if __name__ == "__main__":
     main()
+"""
