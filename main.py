@@ -15,21 +15,19 @@ from models import (
 
 def dijkstra(M, origin):
 
-    """
-    M: matriz de pesos, origin: nodo inicial
-    Regresa una lista de tuplas: (distancia_minima, predecesor 
-    """
+    """ M: matriz de pesos, origin: nodo inicial
+    regresa una lista de tuplas: (distancia_minima, predecesor """
 
     n = len(M)
 
-    # Paso 1: inicializar distancias y predecesores
+    #Paso 1: inicializamos distancias y predecesores
     distancias = [inf] * n
     predecesores = [None] * n
     permanentes = [False] * n
 
     distancias[origin] = 0
 
-    # Repetimos hasta revisar todos los nodos
+    #repetimos hasta revisar todos los nodos
     for _ in range(n):
         # Paso 2 y 5: escoger el nodo no permanente
         # con menor distancia conocida
@@ -41,7 +39,7 @@ def dijkstra(M, origin):
                 mejor_distancia = distancias[i]
                 nodo_actual = i
 
-        # Si ya no hay nodos alcanzables, terminamos
+        #Si ya no hay nodos alcanzables, terminamos
         if nodo_actual is None:
             break
 
@@ -145,12 +143,14 @@ def ejercicio_3c():
     n = len(M3)
     distancias = [dijkstra(M3, i) for i in range(n)]
     return distancias
-#Implementando la grafica y usar networkx 
+
+#Implementando la grafica y usamos networkx (Funcion para graficar)
+
 def graficar_grafo(M, dirigido=True, titulo="Grafo", camino=None):
-    """
-    Dibuja un grafo a partir de una matriz de adyacencia.
-    Si camino se proporciona, resalta ese camino.
-    """
+
+    """ Aqui dibuja un grafo a partir de una matriz de adyacencia.
+    Si camino se proporciona, resalta ese camino.    """
+
     if dirigido:
         G = nx.DiGraph()
     else:
@@ -180,34 +180,36 @@ def graficar_grafo(M, dirigido=True, titulo="Grafo", camino=None):
 
     if camino and len(camino) > 1:
         aristas_camino = [(camino[i], camino[i + 1]) for i in range(len(camino) - 1)]
-        nx.draw_networkx_edges(
-            G,
-            pos,
-            edgelist=aristas_camino,
-            width=3,
-            arrows=dirigido
-        )
+        nx.draw_networkx_edges(G, pos, edgelist=aristas_camino, width=3, arrows=dirigido )
 
     plt.title(titulo)
     plt.axis("off")
     plt.show()
 
 
-####################
+######### Comenzamos con la ejecucion ############
 
 if __name__ == "__main__":
+
+#Ejerciio 1 
     resultado = ejercicio_1()
 
     print("Resultado de Dijkstra desde el nodo 0:")
     for nodo, (distancia, predecesor) in enumerate(resultado):
         print(f"Nodo {nodo}: distancia = {distancia}, predecesor = {predecesor}")
+    
+    MD = matriz_ejercicio_1()
+    graficar_grafo(MD, dirigido=True, titulo="Ejercicio 1")
 
-# Ejercicio 2
+#Ejercicio 2
     camino, distancia = ejercicio_2()
 
     print("\nEjercicio 2:")
     print(f"Camino óptimo: {camino}")
     print(f"Distancia mínima: {distancia}")
+
+    #Grafica 
+    graficar_grafo(MD, dirigido=True, titulo="Ejercicio 2 - Camino óptimo", camino=camino)
     
 
  # Ejercicio 3a
@@ -216,11 +218,19 @@ if __name__ == "__main__":
     for i, fila in enumerate(resultado_3a):
         print(f"Desde el nodo {i}: {fila}")
 
-    # Ejercicio 3b
+    #Grafica 
+    M1 = matriz_ejercicio_3a()
+    graficar_grafo(M1, dirigido=False, titulo="Ejercicio 3a")
+
+# Ejercicio 3b
     print("\nEjercicio 3b:")
     resultado_3b = ejercicio_3b()
     for i, fila in enumerate(resultado_3b):
         print(f"Desde el nodo {i}: {fila}")
+
+    #Grafica 
+     M2 = matriz_ejercicio_3b()
+    graficar_grafo(M2, dirigido=True, titulo="Ejercicio 3b")
 
     # Ejercicio 3c
     print("\nEjercicio 3c:")
@@ -228,29 +238,12 @@ if __name__ == "__main__":
     for i, fila in enumerate(resultado_3c):
         print(f"Desde el nodo {i}: {fila}")
     
+    #Grafica 
     M3 = matriz_ejercicio_3c()
     graficar_grafo(M3, dirigido=True, titulo="Ejercicio 3c")
 
-#Graficas 
 
-    MD = matriz_ejercicio_1()
-    graficar_grafo(MD, dirigido=True, titulo="Ejercicio 1")
-
-    # Ejercicio 2
     
-    graficar_grafo(MD, dirigido=True, titulo="Ejercicio 2 - Camino óptimo", camino=camino)
-
-    # Ejercicio 3a
-
-    M1 = matriz_ejercicio_3a()
-    graficar_grafo(M1, dirigido=False, titulo="Ejercicio 3a")
-
-    # Ejercicio 3b
-    
-    M2 = matriz_ejercicio_3b()
-    graficar_grafo(M2, dirigido=True, titulo="Ejercicio 3b")
-
-    # Ejercicio 3c
 
 
     
