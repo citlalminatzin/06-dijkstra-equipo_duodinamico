@@ -40,6 +40,49 @@ Nota : Donde encuentres un cero quiere decir que no existe una arista entre dich
 Encuentra la distancia mínima para el siguiente ejemplo , y organice el diagrama para tenerlo en Python.
 (Screenshot_20260322_151336_Drive.jpg)
 
+ETAPA 1
+
+|Estados finales|Estados Iniciales (EI)|$F_1$|Qué estado inicial minimiza $F_1$?|
+|------|--------|--------|-------|
+|2|1|9|1|
+|3|1|7|1|
+|4|1|3|1|
+|5|1|2|1|
+
+ETAPA 2
+|Estados finales|EI (2)|EI (3)|EI (4)|EI (5)|$F_2$|¿Qué estado inicial minimiza $F_2$?|
+|---------------|------|------|------|------|-----|-----------------------------------|
+|6              |1+4   | 7+2  |      |      |   5 |                                 2|
+|7              |      |      |      | 2+11 |   13|5|
+|8              | 9+1  |      |  3+11| 2+7  |    9|5|
+
+
+
+ETAPA 3
+
+|Estados finales|EI (6)|EI (7)|EI (8)|$F_3$|¿Qué estado inicial minimiza $F_3$?|
+|---------------|------|------|------|-----|-----------------------------------|
+|9              |5+6   | 13+4 |      |  11 |                                 6 |
+|10             |5+5   | 13+4 |  9+5 |   10|6|
+|11             |      |      | 2+7  |   15|8|
+
+ETAPA 4
+
+|Estados finales|EI (9)|EI (10)|EI (11)|$F_4$|¿Qué estado inicial minimiza $F_4$?|
+|---------------|------|------|------|-----|-----------------------------------|
+|12             |11+4  |10+6  |15+6  |  15 |                                 9 |
+
+
+
+LA DISTANCIA MÍNIMA ESTÁ DADA POR EL SIGUIENTE CAMINO:
+|ETAPA 1|ETAPA 2|ETAPA 3|ETAPA 4|
+|-------|-------|-------|-------|
+|(12)----(9)| (9)----(6)|(6)----(2)|(2)----(1) |
+
+
+
+
+
 
 
 ## Conclusión
