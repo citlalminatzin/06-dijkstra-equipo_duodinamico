@@ -2,7 +2,11 @@
 [![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=23225300)
 # Práctica 6
 
-`data/distances.csv` contiene la lista de adyacencias de la gráfica dirigida del ejercicio 4.
+En esta práctica se trabaja con el algoritmo de Dijkstra, cuyo objetivo es encontrar los caminos más cortos en un grafo ponderado. A lo largo de los ejercicios, se implementa el algoritmo en Python y se aplica a distintas matrices de adyacencia que representan grafos dirigidos y no dirigidos.
+
+Se parte de la construcción de una función general que recibe una matriz de pesos y un nodo inicial, y devuelve las distancias mínimas hacia todos los demás nodos junto con sus predecesores y posteriormente se utiliza esta información para reconstruir el camino óptimo entre dos vértices específicos.
+
+Además, se extiende el análisis a múltiples grafos, calculando los caminos mínimos desde todos los nodos, lo cual nos permitirá comprender el comportamiento del algoritmo en diferentes estructuras. Finalmente, se incorporan herramientas como networkx y matplotlib para visualizar las gráficas, facilitando la interpretación de los resultados obtenidos.
 
 ## Integrantes
 

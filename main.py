@@ -5,7 +5,7 @@ from numpy import zeros
 from math import inf
 from models import matriz_ejercicio_1
 import networkx as nx
-#para el ejercicio 3
+# para el ejercicio 3
 from models import (
     matriz_ejercicio_1,
     matriz_ejercicio_3a,
