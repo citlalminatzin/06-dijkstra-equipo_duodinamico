@@ -15,12 +15,10 @@ Además, se extiende el análisis a múltiples grafos, calculando los caminos m�
 
 
 ## Uso e instalación
-Para poder ejecutar el código, primero debes instalar los siguientes archivos:
-- `models.py`: Aquí encontrarás el algoritmo de Dijkstra.
-- `main.py`: Contiene el código para graficar cada uno de los tres ejercicios
-- `data.py`: Tal vez aquí puedes leer el csv para a partir crear una matriz de adyacencia
 
+El codigo al arancar arrojar la solucion de todos los incisos:
 
+Considerar tener instalado: Matplotlib, numpy and natworkx matplotlib
 
 
 ## Ejercicio 1
@@ -47,18 +45,25 @@ La matriz utilizada fue la siguiente:
 El algoritmo de Dijkstra se desarrolló siguiendo estos pasos:
 
 Inicialización
-Se asigna distancia 0 al nodo origen (nodo 0).
-A los demás nodos se les asigna una distancia infinita (inf).
-Se crea una lista de predecesores para reconstruir caminos.
-Selección del nodo
-Se selecciona el nodo no visitado con la menor distancia conocida.
-Actualización de distancias
-Se revisan los vecinos del nodo actual.
-Si se encuentra un camino más corto, se actualiza la distancia y el predecesor.
-Marcado como permanente
-El nodo se marca como visitado (permanente).
-Repetición
-Se repiten los pasos anteriores hasta procesar todos los nodos. 
+1.- Se asigna distancia 0 al nodo origen (nodo 0).
+
++ A los demás nodos se les asigna una distancia infinita.
++ Se crea una lista de predecesores para reconstruir caminos.
+
+2.- Selección del nodo
+
++ Se selecciona el nodo no visitado con la menor distancia conocida.
++ Actualización de distancias
++ Se revisan los vecinos del nodo actual.
++ Si se encuentra un camino más corto, se actualiza la distancia y el predecesor.
+
+3.- Marcado como permanente
+
++ El nodo se marca como visitado (permanente).
+
+4.- Repetición
+
++ Se repiten los pasos anteriores hasta procesar todos los nodos. 
 
 Aplicando el algoritmo desde el nodo 0, se obtuvieron las siguientes distancias mínimas:
 
@@ -77,14 +82,109 @@ Aplicando el algoritmo desde el nodo 0, se obtuvieron las siguientes distancias 
 
 
 ## Ejercicio 2
-Ahora, usando las listas generadas por tu función del algoritmo de Dijkstra, programa 
-una función que encuentre el camino óptimo entre dos vértices.
+    Ahora, usando las listas generadas por tu función del algoritmo de Dijkstra, programa 
+    una función que encuentre el camino óptimo entre dos vértices.
+
+En este ejercicio se buscó determinar el camino más corto entre dos vértices específicos, utilizando como base los resultados obtenidos en el Ejercicio 1 mediante el algoritmo de Dijkstra.
+
+A diferencia del ejercicio anterior, donde solo se calculaban las distancias mínimas, en este caso también se reconstruyó el camino completo que conecta el nodo origen con el nodo destino.
+
+Para lograr esto, se aprovechó la lista de predecesores generada por el algoritmo de Dijkstra. Esta lista indica, para cada nodo, cuál fue el nodo anterior en el camino óptimo.
+
+**El procedimiento seguido fue el siguiente:**
+
+1.- Se ejecutó el algoritmo de Dijkstra tomando como nodo origen el nodo 0.
+
+2.- Se obtuvo la lista de distancias mínimas y predecesores.
+
+3.- Para reconstruir el camino hacia el nodo destino (nodo 2), se siguió este proceso:
++ Se inicia desde el nodo destino.
++ Se consulta su predecesor.
++ Se continúa retrocediendo hasta llegar al nodo origen.
+
+4.- Finalmente, se invierte el orden de los nodos obtenidos para representar correctamente el camino desde el origen hasta el destino.
+
+El camino óptimo encontrado desde el nodo 0 hasta el nodo 2 fue:
+
+Camino óptimo: [0, 3, 2]
+Distancia mínima: 8.0
+
+<h3 align="center">Gráfica del ejercicio 2</h3>
+<p align="center">
+  <img src="media/ejercicio2pic.png" width="400">
+</p>
+
 
 
 ## Ejercicio 3
-Prueba tus funciones con las siguientes matrices de pesos, empezando siempre en el nodo 
-0.
-Nota : Donde encuentres un cero quiere decir que no existe una arista entre dichos vertices.
+    Prueba tus funciones con las siguientes matrices de pesos, empezando siempre en el nodo 0.
+    Nota : Donde encuentres un cero quiere decir que no existe una arista entre dichos vertices.
+
+En este ejercicio se aplicó el algoritmo de Dijkstra a diferentes grafos representados mediante matrices de adyacencia. A diferencia de los ejercicios anteriores, donde se analizaba un solo nodo origen, en este caso se ejecutó el algoritmo desde cada uno de los nodos del grafo, con el objetivo de obtener las distancias mínimas entre todos los pares de vértices.
+
+Se trabajó con tres matrices distintas:
+
+**M1 (Ejercicio 3a): grafo no dirigido con 8 nodos**
+
+**M2 (Ejercicio 3b): grafo dirigido con 4 nodos**
+
+**M3 (Ejercicio 3c): grafo dirigido con 4 nodos**
+
+
+Cada matriz representa un grafo con distintas estructuras y conexiones, lo que permite analizar el comportamiento del algoritmo en diferentes escenarios.
+
+**Para cada una de las matrices, se siguió el siguiente procedimiento:**
+
+1.- Se tomó la matriz de adyacencia correspondiente.
+
+2.- Se ejecutó el algoritmo de Dijkstra desde cada nodo del grafo.
+
+3.- Se almacenaron los resultados en una lista, donde cada elemento representa las distancias mínimas desde un nodo específico hacia todos los demás.
+
+4.- Se analizaron los resultados obtenidos para identificar la conectividad y accesibilidad entre los nodos.
+
+Este proceso se implementó mediante un ciclo que recorre todos los nodos y aplica el algoritmo de forma repetida.
+
+Ejercicio 3a (Grafo no dirigido)
+
++ Desde cualquier nodo es posible llegar a todos los demás.
++ Todas las distancias son finitas.
++ Esto indica que el grafo es conexo.
+
+Ejemplo (desde nodo 0): Nodo 0 → [0, 3, 4, 2, 7, 6, 6, 10]
+
+<h3 align="center">Gráfica del ejercicio 3a </h3>
+<p align="center">
+  <img src="media/ejercicio3a.png" width="400">
+</p>
+
+Ejercicio 3b (Grafo dirigido)
+
++ Existen nodos que no son alcanzables desde otros.
++ Aparecen valores inf, lo que indica que no hay camino entre ciertos nodos.
++ Esto refleja la naturaleza dirigida del grafo.
+
+Ejemplo: Desde nodo 1 → algunos nodos tienen distancia infinita 
+
+<h3 align="center">Gráfica del ejercicio 3b </h3>
+<p align="center">
+  <img src="media/ejercicio3b.png" width="400">
+</p>
+
+
+Ejercicio 3c (Grafo dirigido acíclico)
+
++ Las conexiones solo van en un sentido (hacia adelante).
++ Algunos nodos no pueden regresar a otros.
++ Se observan múltiples valores.
+
+Ejemplo: Desde nodo 3 → no se puede llegar a ningún otro nodo
+
+<h3 align="center">Gráfica del ejercicio 3c </h3>
+<p align="center">
+  <img src="media/ejercicio3c.png" width="400">
+</p>
+
 
 
 ## Ejercicio 4
