@@ -189,7 +189,11 @@ Ejemplo: Desde nodo 3 → no se puede llegar a ningún otro nodo
 
 ## Ejercicio 4
 Encuentra la distancia mínima para el siguiente ejemplo , y organice el diagrama para tenerlo en Python.
-(Screenshot_20260322_151336_Drive.jpg)
+
+
+<p align="center">
+  <img src="media/ejericio4pic.png" width="300">
+</p>
 
 ETAPA 1
 
@@ -238,4 +242,11 @@ LA DISTANCIA MÍNIMA ESTÁ DADA POR EL SIGUIENTE CAMINO:
 
 ## Conclusión
 
-¿Te gustó la programación dinámica? ¿Sientes que te será útil? ¿Se te hace una buena estrategia para la resolución de problemas?
+<p align="justify">
+A lo largo de esta práctica fue posible comprender y aplicar de manera concreta el problema de rutas mínimas en grafos, utilizando herramientas computacionales para modelar, analizar y resolver distintos casos y en particular, el trabajo realizado permitió observar cómo a partir de una representación adecuada mediante matrices de adyacencia, es posible implementar algoritmos que encuentran caminos óptimos entre nodos, así como interpretar sus resultados de forma clara, además, el uso de Python facilitó mucho la parte práctica, ya que permitió automatizar cálculos que manualmente resultarían más tardados y propensos a error. </p>
+
+<p align="justify"> Respecto a la programación dinámica, sí me gustó, a decir verdad me parece una forma inteligente de resolver problemas porque organiza la solución en etapas y aprovecha resultados anteriores para no repetir trabajo innecesario.
+En cuanto a la experiencia general de la práctica, considero que fue útil porque no solo implicó programar, sino también entender la lógica detrás de cada paso del procedimiento. No se trató únicamente de obtener un resultado, sino de analizar cómo se construye la solución, cómo se interpretan las distancias mínimas y de qué manera puede reconstruirse un camino óptimo entre dos vértices. Esto ayudó a desarrollar una visión más estructurada de los problemas. </p>
+
+<p align="justify"> En conclusión, esta práctica fue valiosa tanto en la parte teórica como en la parte computacional, y permitió reforzar conceptos de grafos, algoritmos y optimización, y también me ayudó a ver que estrategias como la programación dinámica y los algoritmos de caminos mínimos son herramientas importantes dentro de la matemática aplicada y la programación. :) 
+</p>
