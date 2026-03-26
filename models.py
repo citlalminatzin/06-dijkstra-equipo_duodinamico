@@ -10,33 +10,69 @@ funciones principales que vayas a reutilizar en
 tus otras prácticas
 """
 
-def modelo_geom(longitudes: list[float]) -> list[float]:
+import numpy as np
+
+
+def matriz_ejercicio_1():
     """
-    longitudes: list[float] ¿Qué significa longitudes? 
-    (Por favor elimina la pregunta y reemplazala con su respuesta)
-    ...
+    Matriz del Ejercicio 1 de la práctica.
+    Gráfica dirigida de 4 nodos.
     """
-    ... # Puedes eliminar esta línea
+    MD = np.zeros((4, 4))
+    MD[0, 1] = 9
+    MD[3, 2] = 2
+    MD[0, 3] = 6
+    MD[1, 3] = 1
+    MD[2, 1] = 3
+    return MD
 
-def modelo_circ(longitudes: list[float]) -> list[float]:
-    """
-    longitudes: list[float] ¿Qué significa longitudes? 
-    (Por favor elimina la pregunta y reemplazala con su respuesta)
-    ...
-    """
-    ... # Puedes eliminar esta línea
 
-def pearson(x:list[float], y: list[float]):
-    """Calcula el coeficiente de pearson"""
-    ...
+def matriz_ejercicio_1():
+    MD = np.zeros((4, 4))
+    MD[0, 1] = 9
+    MD[3, 2] = 2
+    MD[0, 3] = 6
+    MD[1, 3] = 1
+    MD[2, 1] = 3
+    return MD
 
-def calc_error(pred:list[float], truth: list[float]):
-    """Calcula el error entre una predicción y la verdad del dataset"""
+def matriz_ejercicio_3a():
+    n = 8
+    M1 = np.zeros((n, n))
 
-def main():
-    ... # Puedes eliminar esta línea
+    M1[0,1] = M1[1,0] = 3
+    M1[1,2] = M1[2,1] = 1
+    M1[0,3] = M1[3,0] = 2
+    M1[3,2] = M1[2,3] = 3
+    M1[1,4] = M1[4,1] = 4
+    M1[2,5] = M1[5,2] = 2
+    M1[2,6] = M1[6,2] = 2
+    M1[3,6] = M1[6,3] = 4
+    M1[4,7] = M1[7,4] = 6
+    M1[5,7] = M1[7,5] = 4
+    M1[5,6] = M1[6,5] = 3
+    M1[6,7] = M1[7,6] = 5
+    return M1
 
-if __name__ == "__main__":
-    # Si necesitas hacer pruebas de tu función las puedes escribir acá
-    main()
+def matriz_ejercicio_3b():
+    n = 4
+    M2 = np.zeros((n, n))
 
+    M2[0,1] = 9
+    M2[3,2] = 2
+    M2[0,3] = 6
+    M2[1,3] = 1
+    M2[2,1] = 3
+    return M2
+
+def matriz_ejercicio_3c():
+    n = 4
+    M3 = np.zeros((n, n))
+
+    M3[0,1] = 4
+    M3[0,2] = 8
+    M3[0,3] = 16
+    M3[1,2] = 5
+    M3[1,3] = 11
+    M3[2,3] = 6
+    return M3
